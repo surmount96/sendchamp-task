@@ -11,7 +11,7 @@ import Email from './pricing/Email';
 import Verification from './pricing/Verification';
 import WhatsApp from './pricing/WhatsApp';
 
-const Card = ({type,msg,msg_2,currency,amount,unit,children}) => {
+const Card = ({type,msg,msg_2,currency,amount,unit,receive,children}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <GridItem w="100%" d="flex" mb="6" flexDirection="column" justifyContent="space-between"  h="280px" borderRadius="10px" background="white" borderWidth="1px" borderColor="blue.700" pt="5" pb="1" px="5">
@@ -28,7 +28,7 @@ const Card = ({type,msg,msg_2,currency,amount,unit,children}) => {
                     <Text flex="1" fontWeight="bold">
                         {msg}
                     </Text>
-                    <Box>
+                    <Box w="45%">
                         <Text>
                             Starts at
                         </Text>
@@ -46,10 +46,25 @@ const Card = ({type,msg,msg_2,currency,amount,unit,children}) => {
                         <Text flex="1" fontWeight="bold" mr="3">
                             {msg_2}
                         </Text>
-                        <Box>
-                            <Text color="gray.400" fontWeight="bold">
-                                Not Available
-                            </Text>
+                        <Box w="45%">
+                            { receive ? 
+                                <Box>
+                                    <Text>
+                                        Starts at
+                                    </Text>
+                                    <Text fontWeight="bold">
+                                        {currency} {receive}
+                                    </Text>
+                                    <Text fontWeight="bold">
+                                        /{unit}
+                                    </Text>
+                                </Box>
+                                : 
+                                <Text color="gray.400" fontWeight="bold">
+                                    Not Available
+                                </Text>
+                            }
+                            
                         </Box>
                     </Flex>
                     : ''

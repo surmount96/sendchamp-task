@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useRecoilState } from "recoil";
 import { availablePricing } from './recoils/atom';
 import { Box,Flex,Text,FormControl,HStack,Grid } from '@chakra-ui/react'
@@ -35,16 +35,10 @@ function App() {
 
   const [country, setCountry] = useState('');
   const [currency, setCurrency] = useState('');
-  const [singlePricing, setSinglePricing] = useState('');
-
-  const handleCountry = (e) => {
-    setCountry(e.value)
-  }
-
-  const handleCurrency = (e) => {
-    setCurrency(e.value)
-    if(validateOption) {
-
+  const [singlePricing, setSinglePricing] = useState({});
+  useEffect(()=>{
+    console.log(currency,'currency')
+    if((country && currency) ) {
       setSinglePricing(pricing.find(item => {
         if (item.country === country && item.currency === currency){
           return item;
@@ -52,12 +46,29 @@ function App() {
         
       }))
     }
+  },[country,currency])
+  const handleCountry = (e) => {
+    setCountry(e.value)
+    
   }
+
+  const handleCurrency = (e) => {
+    setCurrency(e.value)
+    // if(country && currency) {
+
+    //   setSinglePricing(pricing.find(item => {
+    //     console.log(country)
+    //     console.log(currency)
+    //     if (item.country == country && item.currency == currency){
+    //       return item;
+    //     }
+        
+    //   }))
+    // }
+  }
+
   console.log(singlePricing)
 
-  const validateOption = () => {
-    return country && currency;
-  }
   
   return (
     <div>
@@ -66,7 +77,7 @@ function App() {
         <Box w="82%" bg="gray.50" pos="relative" minH="100vh">
           <Navbar />
           <Box pt="24" pb="10" w="35%" mx="auto" align="center">
-            <Text fontSize="30px" fontWeight="700">Sendchamp Pricing</Text>
+            <Text fontSize="30px" fontWeight="700">Sendchamp Pricing {currency}</Text>
             <Text color="gray.400" fontWeight="600" mt="5">Start with our competitive pay-as-you-go pricing.</Text>
             <Text color="gray.400" fontWeight="600">For deeper discounts on committed spend as you scale, talk with our sales team.</Text>
           </Box>
@@ -80,11 +91,11 @@ function App() {
           </HStack>
           { country && currency ? 
             <Grid templateColumns='repeat(3, 1fr)' templateAreas="1 1 " gap={6} my="6" mx="12">
-              <Card type="SMS" msg="To Send SMS" msg_2="To Receive SMS" currency="EUR" amount="0.00044" unit="sms"> <FiMessageSquare size="20"/> </Card>
-              <Card type="Voice" msg="To make Calls" msg_2="To Receive Calls" currency="EUR" amount="0.00044" unit="sec"> <FiVoicemail size="20"/> </Card>
-              <Card type="Email" msg="Price Per Mail" currency="EUR" amount="0.00044" unit="mail"> <FiMail size="20"/> </Card>
-              <Card type="WhatsApp" msg="To Send Message" msg_2="To Receive Message" currency="EUR" amount="0.00044" unit="msg"> <FaWhatsapp size="20"/> </Card>
-              <Card type="Verification" msg="To Send OTP" msg_2="To Confirm OTP" currency="EUR" amount="0.00044" unit="token"> <FiCheckCircle size="20"/> </Card>
+              <Card type="SMS" msg="To Send SMS" msg_2="To Receive SMS" currency={singlePricing?.currency} amount={singlePricing?.category?.sms} unit="sms"> <FiMessageSquare size="20"/> </Card>
+              <Card type="Voice" msg="To make Calls" msg_2="To Receive Calls" currency={singlePricing?.currency} amount={singlePricing?.category?.call} unit="sec"> <FiVoicemail size="20"/> </Card>
+              <Card type="Email" msg="Price Per Mail" currency={singlePricing?.currency} amount={singlePricing?.category?.email} unit="mail"> <FiMail size="20"/> </Card>
+              <Card type="WhatsApp" msg="To Send Message" msg_2="To Receive Message" currency={singlePricing?.currency} amount={singlePricing?.category?.message} unit="msg" receive="55"> <FaWhatsapp size="20"/> </Card>
+              <Card type="Verification" msg="To Send OTP" msg_2="To Confirm OTP" currency={singlePricing?.currency} amount={singlePricing?.category?.otp} unit="token" receive="65"> <FiCheckCircle size="20"/> </Card>
             </Grid>
             : <Text align="center"> Select Country and Currency to get Pricing </Text>
           } 

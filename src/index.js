@@ -6,14 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { RecoilRoot } from 'recoil';
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from './theme';
+import ErrorBoundary from './components/ErrorBoundary';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <RecoilRoot>
-        <App />
-      </RecoilRoot>
-    </ChakraProvider>
+    <ErrorBoundary>
+      <ChakraProvider theme={theme}>
+        <RecoilRoot>
+          <App />
+        </RecoilRoot>
+      </ChakraProvider>
+    </ErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -28,7 +28,7 @@ const Navbar = () => {
                         <FormLabel htmlFor='email-alerts' mb='0'>
                             Live mode
                         </FormLabel>
-                        <Switch isChecked="true" id='email-alerts'/>
+                        <Switch isChecked={true} id='email-alerts'/>
                     </FormControl>
                     <Menu>
                         <MenuButton pl="1" as={Button} rightIcon={<ChevronDownIcon />}>
