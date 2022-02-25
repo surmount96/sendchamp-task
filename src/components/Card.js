@@ -5,7 +5,11 @@ import { Box,Flex,Text,GridItem,Modal,
     useDisclosure  } from '@chakra-ui/react'
 import { FiArrowRight } from 'react-icons/fi';
 
-import Sms from './Sms';
+import Sms from './pricing/Sms';
+import Voice from './pricing/Voice';
+import Email from './pricing/Email';
+import Verification from './pricing/Verification';
+import WhatsApp from './pricing/WhatsApp';
 
 const Card = ({type,msg,msg_2,currency,amount,unit,children}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -107,6 +111,25 @@ const Card = ({type,msg,msg_2,currency,amount,unit,children}) => {
                         {
                             type === 'SMS' ?
                             <Sms currency={currency} unit={unit} amount={amount}/> :' '
+                        }
+
+                        {
+                            type === 'Email' ?
+                            <Email currency={currency} unit={unit} amount={amount}/> :' '
+                        }
+
+                        {
+                            type === 'Voice' ?
+                            <Voice currency={currency} unit={unit} amount={amount}/> :' '
+                        }
+
+                        {
+                            type === 'Verification' ?
+                            <Verification currency={currency} unit={unit} amount={amount}/> :' '
+                        }
+                        {
+                            type === 'WhatsApp' ?
+                            <WhatsApp currency={currency} unit={unit} amount={amount}/> :' '
                         }
                         
                     </ModalBody>

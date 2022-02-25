@@ -3,7 +3,7 @@ import { MdOutlineVerified } from 'react-icons/md';
 
 const Sms = ({currency,unit,amount}) => {
     return (
-        <Box mx="10">
+        <Box mx="6" my="4">
             <Box color="green.400" py="6">
                 <Flex alignItems="center" justifyContent="space-between">
                     <Flex w="60%" alignItems="start">
@@ -15,7 +15,7 @@ const Sms = ({currency,unit,amount}) => {
                         </Box>
                         
                     </Flex>
-                    <Box>
+                    <Box w="30%">
                         <Text fontWeight="bold" fontSize="24px">
                             {currency} 
                         </Text>
@@ -30,7 +30,7 @@ const Sms = ({currency,unit,amount}) => {
             
             <Box color="green.400">
                 <Flex alignItems="center" justifyContent="space-between">
-                    <Flex alignItems="start">
+                    <Flex w="60%" alignItems="start">
                         <Text color="success" mt="1"><MdOutlineVerified size="20" /></Text>
                         <Box ml="2">
                             <Text fontSize="19px" fontWeight="bold" mb="4">Domestic Route (DND) </Text>
@@ -38,7 +38,7 @@ const Sms = ({currency,unit,amount}) => {
                         </Box>
                         
                     </Flex>
-                    <Box>
+                    <Box w="30%">
                         <Text fontWeight="bold" fontSize="24px">
                             {currency} 
                         </Text>
@@ -52,7 +52,7 @@ const Sms = ({currency,unit,amount}) => {
             </Box>
             <Box color="green.400" pt="3" pb="6">
                 <Flex alignItems="center" justifyContent="space-between">
-                    <Flex alignItems="start">
+                    <Flex w="60%" alignItems="start">
                         <Text color="success" mt="1"><MdOutlineVerified size="20" /></Text>
                         <Box ml="2">
                             <Text fontSize="19px" fontWeight="bold" mb="4">International Route </Text>
@@ -61,7 +61,7 @@ const Sms = ({currency,unit,amount}) => {
                         </Box>
                         
                     </Flex>
-                    <Box>
+                    <Box w="30%">
                         <Text fontWeight="bold" fontSize="24px">
                             {currency} 
                         </Text>
