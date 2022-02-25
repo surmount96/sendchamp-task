@@ -10,7 +10,7 @@ import { wave } from '../assets/img';
 
 const Navbar = () => {
     return (
-        <Box w="82%" pos="relative">
+        <Box w={{base:'100%',md:'82%'}} pos="relative">
             <HStack maxW="inherit" w="inherit" px="3" h="60px" alignItems="center" justifyContent="space-between" shadow="sm" pos="fixed" bg="#fff" zIndex="99">
                 <Flex>
                     <Flex>
@@ -20,7 +20,7 @@ const Navbar = () => {
                     
                     <Image src={wave} alt="wave" w="30px"/>
                 </Flex>
-                <Flex w="48%">
+                <Flex w={{base:'60%',md:'48%'}}>
                     <Button fontSize="14px" px="8" py="2" _hover={{bg: '#0F19A6'}} leftIcon={<HiOutlineCursorClick />} bg='blue.700' color="#fff" variant='solid'>
                         Take Tour
                     </Button>

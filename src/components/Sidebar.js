@@ -6,7 +6,7 @@ import { FiGrid,FiUsers,FiCheckCircle,FiMessageSquare,FiVoicemail,FiMail,FiSetti
 
 const Sidebar = () => {
     return(
-        <Box w="20%" pos="relative">
+        <Box w="20%" pos="relative" d={{base:'none',md:'block'}}>
           <Flex w="inherit" direction="column" overflow="scroll" h="90vh" pos="fixed">
             <Box p="4" width="180px">
               <Image src="https://my.sendchamp.com/static/media/logo.c9f83ab2.png" alt="logo" />

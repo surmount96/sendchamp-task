@@ -1,4 +1,4 @@
-import { Box,Flex,Text,GridItem,Modal,
+import { Box,Flex,Text,Modal,
     ModalOverlay,
     ModalContent,
     ModalBody,
@@ -14,7 +14,7 @@ import WhatsApp from './pricing/WhatsApp';
 const Card = ({type,msg,msg_2,currency,amount,unit,receive,children}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
-        <GridItem w="100%" d="flex" mb="6" flexDirection="column" justifyContent="space-between"  h="280px" borderRadius="10px" background="white" borderWidth="1px" borderColor="blue.700" pt="5" pb="1" px="5">
+        <Box w="100%" d="flex" mb="6" flexDirection="column" justifyContent="space-between"  h="280px" borderRadius="10px" background="white" borderWidth="1px" borderColor="blue.700" pt="5" pb="1" px="5">
             <Box>
                 <Flex>
                     <Box background="blue.100" d="flex" align="center" justifyItems="center" p="2" borderRadius="5px" _hover={{ bg: 'gray.50'}}>
@@ -150,7 +150,7 @@ const Card = ({type,msg,msg_2,currency,amount,unit,receive,children}) => {
                     </ModalBody>
                 </ModalContent>
             </Modal>
-        </GridItem>
+        </Box>
     );
 }
 

@@ -8,6 +8,6 @@
     border-radius: 0.3rem!important;
 }
 
-.css-1y9o3lo[data-checked]{
-    background-color: #0980FC!important;
+.css-ddil6j[aria-checked=true], .css-ddil6j[data-checked]{
+    background: #0980FC!important;
 }
