@@ -5,6 +5,8 @@ const theme = extendTheme({
       gray:{
         50: '#F8F8FB'
       },
+      green: '#1C9A30',
+      success:'#1C9A30',
       blue: {
         50:'#E6F1FF',
         100: '#BBDBFE',

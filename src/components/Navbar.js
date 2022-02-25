@@ -11,7 +11,7 @@ import { wave } from '../assets/img';
 const Navbar = () => {
     return (
         <Box w="82%" pos="relative">
-            <HStack maxW="inherit" w="inherit" px="3" h="60px" alignItems="center" justifyContent="space-between" shadow="sm" pos="fixed" bg="#fff" zIndex="9999">
+            <HStack maxW="inherit" w="inherit" px="3" h="60px" alignItems="center" justifyContent="space-between" shadow="sm" pos="fixed" bg="#fff" zIndex="99">
                 <Flex>
                     <Flex>
                         <Text> Welcome back, </Text>

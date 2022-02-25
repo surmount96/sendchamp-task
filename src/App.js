@@ -2,12 +2,11 @@ import './App.css';
 import { useState } from 'react';
 import { useRecoilState } from "recoil";
 import { availablePricing } from './recoils/atom';
-import { Box,Flex,Text,FormControl,HStack,Spacer,Grid } from '@chakra-ui/react'
+import { Box,Flex,Text,FormControl,HStack,Grid } from '@chakra-ui/react'
 import Sidebar from './components/Sidebar';
 import Select from 'react-select';
 import Card from './components/Card';
 import { FaWhatsapp } from 'react-icons/fa';
-import { HiOutlineCursorClick } from 'react-icons/hi';
 import { FiMessageSquare,FiVoicemail,FiMail,FiCheckCircle } from 'react-icons/fi';
 import Navbar from './components/Navbar';
 
@@ -50,6 +49,7 @@ function App() {
         if (item.country === country && item.currency === currency){
           return item;
         }
+        
       }))
     }
   }
