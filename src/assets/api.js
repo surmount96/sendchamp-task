@@ -1,7 +1,7 @@
 export const api = [
     {
         country: 'nigeria',
-        currency: 'eur',
+        currency: 'EUR',
         category:{
             sms:'0.00044',
             receive_sms: '',
@@ -16,7 +16,7 @@ export const api = [
     },
     {
         country: 'nigeria',
-        currency: 'usd',
+        currency: 'USD',
         category:{
             sms:'0.00024',
             receive_sms: '',
@@ -31,7 +31,7 @@ export const api = [
     },
     {
         country: 'United State',
-        currency: 'isd',
+        currency: 'USD',
         category:{
             sms:'0.00044',
             receive_sms: '',
@@ -46,7 +46,7 @@ export const api = [
     },
     {
         country: 'Anodara',
-        currency: 'usd',
+        currency: 'USD',
         category:{
             sms:'0.00044',
             receive_sms: '',
@@ -61,7 +61,7 @@ export const api = [
     },
     {
         country: 'Sweden',
-        currency: 'eur',
+        currency: 'EUR',
         category:{
             sms:'0.00044',
             receive_sms: '',

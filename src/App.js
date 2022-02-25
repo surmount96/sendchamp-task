@@ -21,13 +21,13 @@ const options = [
 ]
 
 const currencies = [
-  { value: 'usd', label: 'USD' },
-  { value: 'eur', label: 'EUR' },
-  { value: 'aed', label: 'AED' },
-  { value: 'afn', label: 'AFN' },
-  { value: 'all', label: 'ALL' },
-  { value: 'aoa', label: 'AOA' },
-  { value: 'amd', label: 'AMD' },
+  { value: 'USD', label: 'USD' },
+  { value: 'EUR', label: 'EUR' },
+  { value: 'AED', label: 'AED' },
+  { value: 'AFN', label: 'AFN' },
+  { value: 'ALL', label: 'ALL' },
+  { value: 'AOA', label: 'AOA' },
+  { value: 'AMD', label: 'AMD' },
 ]
 
 function App() {
@@ -63,12 +63,12 @@ function App() {
         <Sidebar />
         <Box w={{base:'100%',md:"82%"}} bg="gray.50" pos="relative" minH="100vh">
           <Navbar />
-          <Box pt="24" pb="10" w={{base:'50%',md:'35%'}} mx="auto" align="center">
+          <Box pt="24" pb="10" w={{base:'90%',md:'35%'}} mx="auto" align="center">
             <Text fontSize="30px" fontWeight="700">Sendchamp Pricing</Text>
             <Text color="gray.400" fontWeight="600" mt="5">Start with our competitive pay-as-you-go pricing.</Text>
             <Text color="gray.400" fontWeight="600">For deeper discounts on committed spend as you scale, talk with our sales team.</Text>
           </Box>
-          <HStack spacing="20px" w={{base:'55%',md:'45%'}} mx="auto" mb="5">
+          <HStack spacing="20px" w={{base:'85%',md:'45%'}} mx="auto" mb="5">
             <FormControl>
               <Select options={options} onChange={handleCountry} placeholder="Select Country"/>
             </FormControl>
@@ -81,8 +81,8 @@ function App() {
               <Card type="SMS" msg="To Send SMS" msg_2="To Receive SMS" currency={singlePricing?.currency} amount={singlePricing?.category?.sms} unit="sms"> <FiMessageSquare size="20"/> </Card>
               <Card type="Voice" msg="To make Calls" msg_2="To Receive Calls" currency={singlePricing?.currency} amount={singlePricing?.category?.call} unit="sec"> <FiVoicemail size="20"/> </Card>
               <Card type="Email" msg="Price Per Mail" currency={singlePricing?.currency} amount={singlePricing?.category?.email} unit="mail"> <FiMail size="20"/> </Card>
-              <Card type="WhatsApp" msg="To Send Message" msg_2="To Receive Message" currency={singlePricing?.currency} amount={singlePricing?.category?.message} unit="msg" receive="55"> <FaWhatsapp size="20"/> </Card>
-              <Card type="Verification" msg="To Send OTP" msg_2="To Confirm OTP" currency={singlePricing?.currency} amount={singlePricing?.category?.otp} unit="token" receive="65"> <FiCheckCircle size="20"/> </Card>
+              <Card type="WhatsApp" msg="To Send Message" msg_2="To Receive Message" currency={singlePricing?.currency} amount={singlePricing?.category?.message} unit="msg" receive={singlePricing?.category?.send_message}> <FaWhatsapp size="20"/> </Card>
+              <Card type="Verification" msg="To Send OTP" msg_2="To Confirm OTP" currency={singlePricing?.currency} amount={singlePricing?.category?.otp} unit="token" receive={singlePricing?.category?.confirm_otp}> <FiCheckCircle size="20"/> </Card>
             </SimpleGrid>
             : <Text align="center"> Select Country and Currency to get Pricing </Text>
           } 

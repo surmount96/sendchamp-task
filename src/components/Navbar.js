@@ -20,11 +20,11 @@ const Navbar = () => {
                     
                     <Image src={wave} alt="wave" w="30px"/>
                 </Flex>
-                <Flex w={{base:'60%',md:'48%'}}>
-                    <Button fontSize="14px" px="8" py="2" _hover={{bg: '#0F19A6'}} leftIcon={<HiOutlineCursorClick />} bg='blue.700' color="#fff" variant='solid'>
+                <Flex w={{base:'50%',md:'48%'}}>
+                    <Button fontSize="14px" d={{base:'none', md:'flex'}} px="8" py="2" _hover={{bg: '#0F19A6'}} leftIcon={<HiOutlineCursorClick />} bg='blue.700' color="#fff" variant='solid'>
                         Take Tour
                     </Button>
-                    <FormControl w="25%" display='flex' alignItems='center' mx="4">
+                    <FormControl w="25%" d={{base:'none', md:'flex'}} alignItems='center' mx="4">
                         <FormLabel htmlFor='email-alerts' mb='0'>
                             Live mode
                         </FormLabel>
